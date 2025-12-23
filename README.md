@@ -20,13 +20,6 @@
 
 ---
 
-## Схема потоков данных
-
-Подробная схема потоков данных описана в файле:
-[artifacts/data-flow.md](artifacts/data-flow.md)
-
-
----
 
 ## Требования к инфраструктуре
 - Linux VM (Debian / Ubuntu / Arch)
