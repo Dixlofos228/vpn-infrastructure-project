@@ -1,0 +1,7 @@
+[Unit]
+Description=System backup via Borg
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/backup-system.sh
+
