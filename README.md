@@ -96,3 +96,11 @@ Prometheus
 - CI/CD
 - Vault
 
+- ---
+
+## Скрипты автоматизации
+
+- scripts/create_vpn_user.sh — автоматическое создание пользователя VPN
+- scripts/backup-system.sh — резервное копирование через Borg
+- scripts/smoke-test.sh — базовая проверка инфраструктуры
+
