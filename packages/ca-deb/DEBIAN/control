@@ -1,0 +1,8 @@
+Package: simple-ca
+Version: 1.0
+Architecture: all
+Maintainer: Student <student@example.com>
+Depends: openssl, easy-rsa, ca-certificates
+Description: Simple CA installer for DevOps course
+ Installs and initializes a root certificate authority.
+

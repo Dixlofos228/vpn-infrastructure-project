@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+chmod 755 /etc/openvpn
+chmod 755 /etc/openvpn/server
+
+chmod 600 /etc/openvpn/server/server.key
+chmod 600 /etc/openvpn/server/ta.key
+chmod 600 /etc/openvpn/server/dh.pem
+
+chmod 644 /etc/openvpn/server/ca.crt
+chmod 644 /etc/openvpn/server/server.crt
+chmod 644 /etc/openvpn/server/server.conf
+
+systemctl enable openvpn-server@server.service
+systemctl restart openvpn-server@server.service || true

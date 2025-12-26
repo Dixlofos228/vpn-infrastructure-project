@@ -1,0 +1,16 @@
+# Private keys
+*.key
+*.pem
+
+# Certificates (optional, safer)
+*.crt
+
+# OpenVPN client configs
+*.ovpn
+
+# Easy-RSA generated files
+easy-rsa/pki/
+
+# Logs
+*.log
+

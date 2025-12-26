@@ -1,0 +1,7 @@
+Package: simple-vpn
+Version: 1.0
+Architecture: all
+Maintainer: Student <student@example.com>
+Depends: openvpn
+Description: Simple OpenVPN server setup for DevOps final project
+ Installs server config and keys, enables and starts the service.
