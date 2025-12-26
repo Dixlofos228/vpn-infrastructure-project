@@ -111,3 +111,15 @@ Prometheus
 - scripts/backup-system.sh — резервное копирование через Borg
 - scripts/smoke-test.sh — базовая проверка инфраструктуры
 
+- ---
+
+## Установка по ролям
+
+Каждый сервер устанавливается с помощью отдельного install-скрипта:
+
+- CA: installers/install_ca.sh
+- VPN: installers/install_vpn.sh
+- Monitoring: installers/install_monitoring.sh
+- Backup: installers/install_backup.sh
+
+
