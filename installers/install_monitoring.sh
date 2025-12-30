@@ -1,13 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "[MONITORING] Installing Prometheus and Grafana"
+echo "[Monitoring] Installing Prometheus node exporter"
 
 apt update
-apt install -y prometheus grafana
+apt install -y prometheus-node-exporter
 
-systemctl enable prometheus grafana-server
-systemctl start prometheus grafana-server
+systemctl enable prometheus-node-exporter
+systemctl start prometheus-node-exporter
 
-echo "[MONITORING] Monitoring installed"
-
+echo "[Monitoring] Node exporter started"
