@@ -1,13 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "[VPN] Installing VPN server"
+echo "[VPN] Installing OpenVPN server"
 
 apt update
 apt install -y openvpn easy-rsa
 
-systemctl enable openvpn
-systemctl start openvpn
+mkdir -p /etc/openvpn/server
+mkdir -p /var/log/openvpn
 
-echo "[VPN] VPN server installed"
+cp artifacts/config-examples/openvpn-server.conf /etc/openvpn/server/server.conf
 
+systemctl enable openvpn@server
+systemctl start openvpn@server
+
+echo "[VPN] OpenVPN server installed and started"
