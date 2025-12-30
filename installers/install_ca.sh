@@ -1,17 +1,21 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "[CA] Installing CA server"
+echo "[CA] Installing Certificate Authority"
 
 apt update
 apt install -y easy-rsa
 
-mkdir -p /opt/ca
-cd /opt/ca
+CA_DIR=/opt/ca
+EASYRSA_BATCH=1
 
-export EASYRSA_BATCH=1
+mkdir -p "$CA_DIR"
+cd "$CA_DIR"
+
 easyrsa init-pki
 easyrsa build-ca nopass
 
-echo "[CA] CA server installed successfully"
+mkdir -p /etc/ca
+cp pki/ca.crt /etc/ca/
 
+echo "[CA] CA initialized successfully"
