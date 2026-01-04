@@ -1,12 +1,28 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "[Monitoring] Installing Prometheus node exporter"
+echo "[Monitoring] Installing Prometheus Node Exporter"
 
-apt update
-apt install -y prometheus-node-exporter
+# ---- install package depending on distro ----
+if command -v apt >/dev/null 2>&1; then
+    echo "[Monitoring] Detected apt-based system"
+    apt update
+    apt install -y prometheus-node-exporter
+    SERVICE_NAME=prometheus-node-exporter
 
-systemctl enable prometheus-node-exporter
-systemctl start prometheus-node-exporter
+elif command -v pacman >/dev/null 2>&1; then
+    echo "[Monitoring] Detected Arch Linux"
+    pacman -Sy --noconfirm prometheus-node-exporter
+    SERVICE_NAME=prometheus-node-exporter.service
 
-echo "[Monitoring] Node exporter started"
+else
+    echo "[Monitoring] Unsupported Linux distribution"
+    exit 1
+fi
+
+# ---- enable & start service ----
+systemctl enable "$SERVICE_NAME"
+systemctl restart "$SERVICE_NAME"
+
+echo "[Monitoring] Node exporter is running"
+
