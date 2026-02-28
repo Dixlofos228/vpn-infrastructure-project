@@ -1,0 +1,13 @@
+=== ИНФОРМАЦИЯ О БЭКАПАХ VPN ИНФРАСТРУКТУРЫ ===
+Дата проверки: Sat Feb 28 03:48:18 PM -03 2026
+
+БАКЕТ: gs://vpn-backups-1772301317
+
+=== БЭКАПЫ VPN СЕРВЕРА ===
+gs://vpn-backups-1772301317/vpn-server/vpn-backup-20260228_180804.tar.gz
+gs://vpn-backups-1772301317/vpn-server/vpn-backup-20260228_181102.tar.gz
+
+=== БЭКАПЫ CA СЕРВЕРА ===
+
+=== БЭКАПЫ CA СЕРВЕРА (после настройки) ===
+gs://vpn-backups-1772301317/ca-server/ca-backup-20260228_185331.tar.gz
